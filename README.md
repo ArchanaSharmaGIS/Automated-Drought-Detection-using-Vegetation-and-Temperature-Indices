@@ -1,5 +1,7 @@
 # Automated-Drought-Detection-using-Vegetation-and-Temperature-Indices
-This project utilizes remote sensing data and Google Earth Engine to analyze crop drought conditions by calculating Vegetation Condition Index (VCI), Temperature Condition Index (TCI), and Vegetation Health Index (VHI). These indices are valuable for understanding the impact of drought on agriculture, allowing for proactive intervention in drought-prone regions.
+This project utilizes remote sensing data and Google Earth Engine to analyze crop drought conditions by calculating Vegetation Condition Index (VCI), Temperature Condition Index (TCI), LST (Land Surface Temperature),DSI (Drought Severity Index) and Vegetation Health Index (VHI). These indices are valuable for understanding the impact of drought on agriculture, allowing for proactive intervention in drought-prone regions.
+This project utilizes Python libraries including `geemap`, `rasterio`, and `geopandas` to streamline data processing, visualization, and export, making it easier to monitor and assess drought severity.
+
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Motivation](#motivation)
@@ -7,7 +9,6 @@ This project utilizes remote sensing data and Google Earth Engine to analyze cro
 - [Use Cases](#use-cases)
 - [Technologies Used](#technologies-used)
 - [Data Description](#data-description)
-- [Installation](#installation)
 - [Usage](#usage)
 - [Methodology](#methodology)
 - [Results](#results)
@@ -20,12 +21,13 @@ This project analyzes crop drought by leveraging satellite-based remote sensing 
 ## Motivation
 With increased frequency of droughts due to climate change, it is critical to monitor crop health and prevent large-scale agricultural losses. Remote sensing data allows for real-time, large-scale monitoring of vegetation health, offering a reliable tool for detecting and mitigating the impact of drought on crop productivity. This project aims to support data-driven agricultural management through accessible and reliable drought monitoring techniques.
 
+
 ## Features
-- **Data Acquisition**: Automated retrieval of Landsat 8 images using Google Earth Engine, allowing for large-scale data processing.
-- **Drought Indices Calculation**: Computes Vegetation Condition Index (VCI), Temperature Condition Index (TCI), and Vegetation Health Index (VHI).
-- **Interactive Map Visualization**: Generates map visualizations of VCI, TCI, and VHI to highlight affected areas.
-- **Export Functionality**: Exports GeoTIFF files of drought indices for further use or integration into GIS applications.
-- **Region of Interest Selection**: Allows users to define specific areas for targeted drought analysis.
+- **Data Retrieval:** Uses Landsat 8 imagery and shapefiles to define the region of interest.
+- **Vegetation and Temperature Analysis:** Calculates NDVI-based VCI, LST-based TCI, and combined VHI for drought assessment.
+- **Map Visualization:** Displays drought indices on interactive maps for easy visualization.
+- **Data Export:** Exports analysis results (VCI, TCI, VHI) as GeoTIFF files.
+
 
 ## Use Cases
 - **Agricultural Monitoring**: Identifying drought-stressed regions in agricultural land for early intervention.
@@ -43,7 +45,14 @@ This project relies on the following data sources:
 - **Landsat 8 Surface Reflectance**: Provides spectral bands used for calculating NDVI.
 - **Landsat 8 Thermal Infrared**: Supplies the thermal data needed to compute the Temperature Condition Index.
 
-## Installation
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/YourUsername/Crop-Drought-Analysis.git
+#### Features
+```markdown
+## Features
+
+- **NDVI**: Vegetation health measurement.
+- **VCI**: Compares current NDVI to historical min/max NDVI.
+- **TCI**: Measures temperature stress on vegetation.
+- **LST**: Land Surface Temperature derived from thermal band.
+- **VHI**: Combined measure of vegetation and temperature health.
+- **DSI**: Drought Severity Index for evaluating drought conditions.
+
