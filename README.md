@@ -45,14 +45,12 @@ This project relies on the following data sources:
 - **Landsat 8 Surface Reflectance**: Provides spectral bands used for calculating NDVI.
 - **Landsat 8 Thermal Infrared**: Supplies the thermal data needed to compute the Temperature Condition Index.
 
-#### Features
-```markdown
-## Features
 
-- **NDVI**: Vegetation health measurement.
-- **VCI**: Compares current NDVI to historical min/max NDVI.
-- **TCI**: Measures temperature stress on vegetation.
-- **LST**: Land Surface Temperature derived from thermal band.
-- **VHI**: Combined measure of vegetation and temperature health.
+## Methodology
+This project calculates drought indices as follows:
+- **NDVI Calculation**: Normalized Difference Vegetation Index is derived from Landsat 8 to monitor vegetation health.
+- **VCI Calculation**: Vegetation Condition Index normalizes NDVI to indicate vegetation stress levels.
+- **TCI Calculation**: Temperature Condition Index normalizes land surface temperature (LST) to measure thermal stress on vegetation.
+- **LST Calculation**: Land Surface Temperature derived from thermal band.
+- **VHI Calculation**: Combines VCI and TCI to give an overall Vegetation Health Index, highlighting regions affected by both temperature and vegetation stress.
 - **DSI**: Drought Severity Index for evaluating drought conditions.
-
