@@ -1,1 +1,1 @@
-# Automated-Crop-Drought-Detection-using-Vegetation-and-Temperature-Indices
+# Automated-Drought-Detection-using-Vegetation-and-Temperature-Indices
