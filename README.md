@@ -9,12 +9,9 @@ This project utilizes Python libraries including `geemap`, `rasterio`, and `geop
 - [Use Cases](#use-cases)
 - [Technologies Used](#technologies-used)
 - [Data Description](#data-description)
-- [Usage](#usage)
 - [Methodology](#methodology)
 - [Results](#results)
-- [Future Improvements](#future-improvements)
 - [Acknowledgments](#acknowledgments)
-- [License](#license)
 ## Project Overview
 This project analyzes crop drought by leveraging satellite-based remote sensing data and processing it on the Google Earth Engine platform. The core of the analysis focuses on the computation of drought indices (VCI, TCI, and VHI) to visualize and quantify the extent of drought stress on crop vegetation. This project provides key insights for agricultural management, enabling decision-makers to detect early signs of drought stress and implement timely interventions.
 
@@ -54,3 +51,18 @@ This project calculates drought indices as follows:
 - **LST Calculation**: Land Surface Temperature derived from thermal band.
 - **VHI Calculation**: Combines VCI and TCI to give an overall Vegetation Health Index, highlighting regions affected by both temperature and vegetation stress.
 - **DSI**: Drought Severity Index for evaluating drought conditions.
+
+## Result
+- The outputs include GeoTIFF maps of VCI, TCI, and VHI for the specified region. Below is an example interpretation:
+- **VCI Map**: Darker colors indicate higher vegetation stress.
+- **TCI Map**: Higher TCI values correspond to lower temperature stress.
+- **VHI Map**: Combines VCI and TCI, with lower values indicating more severe drought conditions.
+
+### Sample Output:
+![Sample VHI Map](output/sample_vhi_map.png)
+## Acknowledgments
+- **Google Earth Engine**: For the platform and data access.
+- **Geemap Library**: For enabling visualization of results on interactive maps.
+- **Landsat Data**: Courtesy of the United States Geological Survey (USGS).
+
+
